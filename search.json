@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Billboard Graphic",
-    "section": "",
-    "text": "Figure 1: The eight longest-charting hits that reached Billboard #1"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -19,5 +12,12 @@
     "title": "About",
     "section": "",
     "text": "My name is Alaina and I go to New College of Florida Kane’s Free Data Science Bootcamp"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Billboard Graphic",
+    "section": "",
+    "text": "Figure 1: The eight longest-charting hits that reached Billboard #1"
   }
 ]

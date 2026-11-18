@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://alainak42.github.io/websites-2/index.html</loc>
-    <lastmod>2026-11-18T22:35:34.321Z</lastmod>
+    <loc>https://alainak42.github.io/websites-2/source-1.html</loc>
+    <lastmod>2026-11-18T22:57:43.426Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alainak42.github.io/websites-2/source-2.html</loc>
+    <lastmod>2026-11-18T22:57:58.413Z</lastmod>
   </url>
   <url>
     <loc>https://alainak42.github.io/websites-2/about.html</loc>
     <lastmod>2026-11-18T22:45:30.177Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alainak42.github.io/websites-2/index.html</loc>
+    <lastmod>2026-11-18T22:35:34.321Z</lastmod>
   </url>
 </urlset>
