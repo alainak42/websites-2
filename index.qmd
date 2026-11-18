@@ -1,0 +1,57 @@
+---
+title: "Billboard Graphic"
+execute:
+  echo: false
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+#| label: fig-billboard-top-hits
+#| fig-cap: "The eight longest-charting hits that reached Billboard #1"
+
+top_hits <- billboard |>
+  rowwise() |>
+  mutate(
+    peak_rank = min(c_across(starts_with("wk")), na.rm = TRUE),
+    weeks_on_chart = sum(!is.na(c_across(starts_with("wk"))))
+  ) |>
+  ungroup() |>
+  filter(peak_rank == 1) |>
+  slice_max(weeks_on_chart, n = 8) |>
+  mutate(song = paste(artist, track, sep = " - "))
+
+top_hit_paths <- top_hits |>
+  pivot_longer(
+    cols = starts_with("wk"),
+    names_to = "week",
+    names_prefix = "wk",
+    values_to = "rank",
+    names_transform = as.integer
+  ) |>
+  filter(week <= 30, !is.na(rank))
+
+ggplot(top_hit_paths, aes(x = week, y = rank, color = song)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(size = 1.5, alpha = 0.8) +
+  scale_y_reverse(limits = c(100, 1), breaks = c(1, 10, 25, 50, 75, 100)) +
+  scale_x_continuous(breaks = seq(0, 30, 5)) +
+  labs(
+    title = "The longest chart runs by #1 hits",
+    subtitle = "Weekly Billboard Hot 100 position for the eight longest-charting songs that reached #1 in 2000",
+    x = "Week on the chart",
+    y = "Billboard rank",
+    color = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom",
+    legend.text = element_text(size = 9),
+    panel.grid.minor = element_blank()
+  ) +
+  guides(color = guide_legend(ncol = 2))
+```
